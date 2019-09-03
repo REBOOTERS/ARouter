@@ -1,0 +1,22 @@
+@startuml
+
+
+(*) --> "init"
+
+"init" --> "ARouter.init(getApplication())"
+
+"ARouter.init(getApplication())" --> "_ARouter.init(application)"
+
+"ARouter.init(getApplication())" -> "_ARouter.afterInit()"
+
+note top
+invoked when init done
+end note
+
+"_ARouter.afterInit()" -> (*)
+
+"_ARouter.init(application)" --> "LogisticsCenter.init(mContext, executor)"
+
+
+
+@enduml

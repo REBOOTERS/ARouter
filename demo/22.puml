@@ -1,0 +1,14 @@
+@startuml
+
+
+(*) --> "build"
+
+"build" --> "ARouter.getInstance().build(path)"
+
+"ARouter.getInstance().build(path)" --> "_ARouter.getInstance().build(path)"
+
+"_ARouter.getInstance().build(path)" --> "new PostCard(path, group)"
+
+"new PostCard(path, group)" --> "PostCard"
+
+@enduml

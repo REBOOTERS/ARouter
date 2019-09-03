@@ -1,0 +1,51 @@
+@startuml
+
+package arouter_api  #03A9F4 {
+    class ARouter
+    class _ARouter
+    class PostCard
+    class LogisticsCenter
+    class WareHouse
+}
+
+package arouter_annotaion #00BCD4 {
+    class RouteMeta
+}
+
+class ARouter {
+   getInstance()
+}
+
+class _ARouter {
+   init()
+   afterInit()
+   build() PostCard
+   navigation()
+   _navigation()
+}
+
+class LogisticsCenter {
+    init()
+    completion()
+}
+
+class PostCard {
+    navigation()
+}
+
+class WareHouse {
+    groupsIndex
+    routes
+}
+
+class RouteMeta {
+}
+
+_ARouter .right.> LogisticsCenter
+_ARouter -up-> WareHouse
+WareHouse -up--> RouteMeta
+_ARouter <-right-> PostCard
+ARouter .up.> _ARouter
+PostCard --up--|> RouteMeta
+
+@enduml

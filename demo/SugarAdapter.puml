@@ -1,0 +1,42 @@
+@startuml
+
+package sugaradapter #ddd {
+    class Container
+    enum Sugar
+    class SugarAdapter
+    abstract class SugarHolder
+    interface ContainerDelegate
+    interface InjectDelegate
+}
+
+class Container {
+   - mHolderClass:Class<? extends SugarHolder>
+   - mDataClass:Class<?>
+   - mLayoutRes:int
+   - mCallback
+   - mData:Object
+}
+
+class SugarAdapter {
+    - mArray:SparseArray<Container>
+}
+
+RecyclerView.ViewHolder <|-up- SugarHolder
+RecyclerView.Adapter <|-up- SugarAdapter
+
+Container *---right- SugarAdapter
+ContainerDelegate *---right- Sugar
+InjectDelegate *---left- Sugar
+
+ContainerDelegate o---right- SugarAdapter
+InjectDelegate o--left- SugarHolder
+
+Sugar <-- SugarAdapter
+Sugar <-- SugarHolder
+
+enum Sugar {
+    getContainerDelegate():ContainerDelegate
+    getInjectDelegate:InjectDelegate
+}
+
+@enduml

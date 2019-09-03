@@ -1,0 +1,44 @@
+@startuml
+
+(*) --> "navigation"
+
+note right
+在 PostCard 类中
+end note
+
+"navigation" --> "ARouter.getInstance().navigation(context, this, -1, callback)"
+
+"ARouter.getInstance().navigation(context, this, -1, callback)" --> "_ARouter.getInstance().navigation(context, this, -1, callback)"
+
+"_ARouter.getInstance().navigation(context, this, -1, callback)" -> "LogisticsCenter.completion(postcard)"
+
+"_ARouter.getInstance().navigation(context, this, -1, callback)" --> "after completion done"
+note right
+below process invoked when
+LogisticsCenter.completion done
+end note
+
+if ("callback !=null") then
+    -> true "callback.onFound(postcard)"
+else
+    --> if ("postcard.isGreenChannel()") then
+            --> true "_navigation(context, postcard, requestCode, callback)"
+            -->     "switch postcard.getType()"
+        else
+            -> false "interceptorService.doInterceptions"
+            note right
+            非 isGreenChannel ，走拦截器逻辑
+            end note
+        endif
+endif
+
+
+"switch postcard.getType()" --> "activity"
+"activity" -left-> "start activity"
+"start activity"  --left-> (*)
+"switch postcard.getType()" --> "fragment"
+"fragment" -> "return object "
+"return object " -> (*)
+
+
+@enduml

@@ -20,6 +20,7 @@ import com.alibaba.android.arouter.demo.testservice.SingleService;
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.callback.NavCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.test.BusinessGod;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         activity = this;
+
+        System.out.println("result ==" + new BusinessGod().getAllBusiness());
     }
 
     public static Activity getThis() {

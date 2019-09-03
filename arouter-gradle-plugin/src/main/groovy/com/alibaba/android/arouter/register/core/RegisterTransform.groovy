@@ -79,6 +79,7 @@ class RegisterTransform extends Transform {
                 }
                 // input file
                 File src = jarInput.file
+                Logger.i("zzzzz" + src.absolutePath)
                 // output file
                 File dest = outputProvider.getContentLocation(destName + "_" + hexName, jarInput.contentTypes, jarInput.scopes, Format.JAR)
 
@@ -100,7 +101,7 @@ class RegisterTransform extends Transform {
                     if (!leftSlash) {
                         path = path.replaceAll("\\\\", "/")
                     }
-                    if(file.isFile() && ScanUtil.shouldProcessClass(path)){
+                    if (file.isFile() && ScanUtil.shouldProcessClass(path)) {
                         ScanUtil.scanClass(file)
                     }
                 }

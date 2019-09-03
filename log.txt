@@ -1,0 +1,23 @@
+
+ARouter::Register >>> Project enable arouter-register plugin
+
+ARouter::Register >>> Start scan register info in jar file.
+ARouter::Register >>> Scan finish, current cost time 137ms
+ARouter::Register >>> Insert register code to file /Users/zhuyongging/Desktop/must-done/ARouter/app/build/intermediates/transforms/com.alibaba.arouter/debug/41.jar
+ARouter::Register >>> com/alibaba/android/arouter/routes/ARouter$$Root$$modulejava
+ARouter::Register >>> com/alibaba/android/arouter/routes/ARouter$$Root$$modulekotlin
+ARouter::Register >>> com/alibaba/android/arouter/routes/ARouter$$Root$$arouterapi
+ARouter::Register >>> com/alibaba/android/arouter/routes/ARouter$$Root$$app
+ARouter::Register >>> Insert init code to class >> com/alibaba/android/arouter/core/LogisticsCenter.class
+ARouter::Register >>> Insert register code to file /Users/zhuyongging/Desktop/must-done/ARouter/app/build/intermediates/transforms/com.alibaba.arouter/debug/41.jar
+ARouter::Register >>> com/alibaba/android/arouter/routes/ARouter$$Interceptors$$modulejava
+ARouter::Register >>> com/alibaba/android/arouter/routes/ARouter$$Interceptors$$app
+ARouter::Register >>> Insert init code to class >> com/alibaba/android/arouter/core/LogisticsCenter.class
+ARouter::Register >>> Insert register code to file /Users/zhuyongging/Desktop/must-done/ARouter/app/build/intermediates/transforms/com.alibaba.arouter/debug/41.jar
+ARouter::Register >>> com/alibaba/android/arouter/routes/ARouter$$Providers$$modulejava
+ARouter::Register >>> com/alibaba/android/arouter/routes/ARouter$$Providers$$modulekotlin
+ARouter::Register >>> com/alibaba/android/arouter/routes/ARouter$$Providers$$arouterapi
+ARouter::Register >>> com/alibaba/android/arouter/routes/ARouter$$Providers$$app
+ARouter::Register >>> Insert init code to class >> com/alibaba/android/arouter/core/LogisticsCenter.class
+ARouter::Register >>> Generate code finish, current cost time: 220ms
+
